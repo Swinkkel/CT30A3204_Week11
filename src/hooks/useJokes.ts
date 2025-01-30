@@ -8,7 +8,8 @@ export const useJokes = () => {
     setSavedJokes((prevJokes) =>
       prevJokes.some((j) => j.id === joke.id) ? prevJokes : [...prevJokes, joke]
     );
-  };
+
+   };
 
   return { savedJokes, saveJoke };
 };

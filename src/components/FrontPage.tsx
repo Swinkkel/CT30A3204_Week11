@@ -32,7 +32,7 @@ const FrontPage: React.FC<FrontPageProps> = ({saveJoke}) => {
                 </div>
             )}
             <Button onClick={()=>window.location.reload()}>Get Joke</Button>
-            {saveJoke && (
+            {saveJoke && convertedData && (
                 <Button onClick={()=>saveJoke(convertedData)}>Save joke</Button>
             )}
         </div>

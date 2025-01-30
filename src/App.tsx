@@ -4,6 +4,7 @@ import Header from './components/Header'
 import FrontPage from './components/FrontPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import {useJokes} from './hooks/useJokes'
+import SavedPage from './components/SavedPage'
 
 function App() {
   const jokesHook = useJokes();
@@ -13,7 +14,7 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' element={<FrontPage saveJoke={jokesHook.saveJoke} />} />
-          <Route path='/saved' element={<FrontPage />} />
+          <Route path='/saved' element={<SavedPage savedJokes={jokesHook.savedJokes} />} />
         </Routes>
       </BrowserRouter>
 
