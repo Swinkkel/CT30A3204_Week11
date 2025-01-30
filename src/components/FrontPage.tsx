@@ -5,15 +5,12 @@ import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import {IJoke} from '../types/joke'
 
-interface IJoke {
-    type: string
-    setup: string
-    punchline: string
-    id: number
-}
-
-const FrontPage = () => {
+interface FrontPageProps {
+    saveJoke?: (joke: IJoke) => void;
+  }
+const FrontPage: React.FC<FrontPageProps> = ({saveJoke}) => {
     const url: string = 'https://official-joke-api.appspot.com/random_joke'
     const {data, loading, error} = useFetch(url)
 
@@ -35,6 +32,9 @@ const FrontPage = () => {
                 </div>
             )}
             <Button onClick={()=>window.location.reload()}>Get Joke</Button>
+            {saveJoke && (
+                <Button onClick={()=>saveJoke(convertedData)}>Save joke</Button>
+            )}
         </div>
     )
 }
