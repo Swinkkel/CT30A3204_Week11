@@ -24,7 +24,7 @@ const FrontPage = () => {
     return (
         <div>
             <h1>Welcome to Joke Generator</h1>
-            {loading && <p>Loading joke...</p>}
+            {loading && <p>Loading a joke...</p>}
             {error && <p>{error}</p>}
             {convertedData && (
                 <div>
