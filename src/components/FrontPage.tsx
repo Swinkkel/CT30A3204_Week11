@@ -34,7 +34,7 @@ const FrontPage = () => {
                     </Card>
                 </div>
             )}
-            <Button onClick={()=>window.location.reload()}>GET JOKE</Button>
+            <Button onClick={()=>window.location.reload()}>Get Joke</Button>
         </div>
     )
 }
