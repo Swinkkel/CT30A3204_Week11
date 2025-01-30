@@ -11,5 +11,9 @@ export const useJokes = () => {
 
    };
 
-  return { savedJokes, saveJoke };
+   const deleteJoke = (id: number) => {
+        setSavedJokes((preJokes) => preJokes.filter((joke) => joke,id !== id))
+   }
+
+  return { savedJokes, saveJoke, deleteJoke };
 };
